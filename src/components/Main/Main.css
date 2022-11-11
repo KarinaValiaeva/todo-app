@@ -1,0 +1,14 @@
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.todo-container {
+    
+
+    width: 300px;
+    background-color: rgb(233, 233, 233);
+    border: 2px solid rgb(63, 60, 60);
+    border-radius: 10px;
+}
