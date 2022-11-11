@@ -27,9 +27,9 @@ function TodoList() {
           </li>
         ))}
       </ol>
-      <Fab color="primary" aria-label="add">
+      {/* <Fab color="neutral" aria-label="add">
         <AddIcon />
-      </Fab>
+      </Fab> */}
     </div>
     </main>
   );

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { editTodoItem, removeTodoItem } from "../../store/actions";
 import { useDispatch } from "react-redux";
+import "./todoItem.css";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from '@mui/icons-material/Edit';
@@ -30,16 +31,17 @@ function TodoItem(props) {
   return (
     <div className="todo-item">
       <input
+      className="todo-item__input"
         type="text"
         name="title"
         value={data}
         onChange={handleChange}
       ></input>
       {/* <button onClick={handleEditTodo}>Редактировать</button> */}
-      <IconButton aria-label="delete" size="large" color="secondary" onClick={handleEditTodo}>
+      <IconButton aria-label="delete" size="large" color="primary" onClick={handleEditTodo}>
         <EditIcon  />
       </IconButton>
-      <IconButton aria-label="delete" size="large" color="secondary" onClick={handleRemoveTodo}>
+      <IconButton aria-label="delete" size="large" color="primary" onClick={handleRemoveTodo}>
         <DeleteIcon  />
       </IconButton>
 
