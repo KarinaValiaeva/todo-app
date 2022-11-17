@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
+import { Button, TextField } from "@mui/material";
 function TodoInput() {
   const [value, setValue] = useState("");
   const [isVisibleInput, setIsVisibleInput] = useState(false);
@@ -14,6 +15,7 @@ function TodoInput() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    setIsVisibleInput(false);
     dispatch(addTodoItem(value));
   }
 
@@ -25,17 +27,23 @@ setIsVisibleInput(true);
 
   return (
     <div className="todo-input">
-      <Fab color="neutral" aria-label="add" onClick={() => {handleClickAdd()}}>
+      <Fab color="primary" aria-label="add" onClick={() => {handleClickAdd()}}>
         <AddIcon />
       </Fab>
       {isVisibleInput && (<>
-      <input
+        <TextField variant="outlined"  id="outlined-basic" type="text"
+        name="title"
+        value={value}
+        onChange={handleChange} />
+         
+      {/* <input
         type="text"
         name="title"
         value={value}
-        onChange={handleChange}></input>
+        onChange={handleChange}></input> */}
     
-      <button onClick={handleSubmit}>Добавить</button>
+      <Button variant="contained" onClick={handleSubmit}>Add task</Button>
+      
       </>)}
     </div>)
 }
