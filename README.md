@@ -5,3 +5,5 @@
 - React
 - Redux
 - REST API
+
+[Ссылка](https://KarinaValiaeva.github.io/todo-app)
